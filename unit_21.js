@@ -172,13 +172,13 @@ next.addEventListener('touchstart', function (e) {
   nextFunction(); 
   console.log('touch')
 });
-next.addEventListener('click', function (e) {
-  e.stopPropagation()
-  e.preventDefault() 
-  nextFunction(); 
-  console.log('click')
-});
-// next.addEventListener('click', nextFunction);
+// next.addEventListener('click', function (e) {
+//   e.stopPropagation()
+//   e.preventDefault() 
+//   nextFunction(); 
+//   console.log('click')
+// });
+next.addEventListener('click', nextFunction);
 
 prev.addEventListener('touchstart', function (e) {
   e.stopPropagation()
@@ -186,13 +186,13 @@ prev.addEventListener('touchstart', function (e) {
   prevFunction(); 
   console.log('touch')
 });
-prev.addEventListener('click', function (e) {
-  e.stopPropagation()
-  e.preventDefault() 
-  prevFunction(); 
-  console.log('click')
-});
-// prev.addEventListener('click', prevFunction);
+// prev.addEventListener('click', function (e) {
+//   e.stopPropagation()
+//   e.preventDefault() 
+//   prevFunction(); 
+//   console.log('click')
+// });
+prev.addEventListener('click', prevFunction);
 
 resetB.addEventListener('touchstart', function (e) {
   e.stopPropagation()
