@@ -155,35 +155,51 @@ const prev = document.querySelector('.prev');
 const resetB = document.querySelector('.reset');
 const mainImg = document.querySelector('.img-12-max');
 
-if ('ontouchstart' in window) {
-  next.addEventListener('touchstart', nextFunction());
-  prev.addEventListener('touchstart', prevFunction());
-  resetB.addEventListener('touchstart', resetFunction());
-}
-next.addEventListener('click', nextFunction);
-prev.addEventListener('click', prevFunction);
-resetB.addEventListener('click', resetFunction);
+//Не могу убрать задвоенное событие
+// if ('ontouchstart' in window) {
+//   next.addEventListener('touchstart', nextFunction());
+//   prev.addEventListener('touchstart', prevFunction());
+//   resetB.addEventListener('touchstart', resetFunction());
+// }
+// next.addEventListener('click', nextFunction);
+// prev.addEventListener('click', prevFunction);
+// resetB.addEventListener('click', resetFunction);
 
-// next.addEventListener('touchstart', function (e) {
-//   e.stopPropagation()
-//   e.preventDefault() 
-//   nextFunction(); 
-// });
+//___________________________________________________
+next.addEventListener('touchstart', function (e) {
+  e.stopPropagation()
+  e.preventDefault() 
+  nextFunction(); 
+  console.log('touch')
+});
+next.addEventListener('click', function (e) {
+  e.stopPropagation()
+  e.preventDefault() 
+  nextFunction(); 
+  console.log('click')
+});
 // next.addEventListener('click', nextFunction);
 
-// prev.addEventListener('touchstart', function (e) {
-//   e.stopPropagation()
-//   e.preventDefault() 
-//   prevFunction(); 
-// });
+prev.addEventListener('touchstart', function (e) {
+  e.stopPropagation()
+  e.preventDefault() 
+  prevFunction(); 
+  console.log('touch')
+});
+prev.addEventListener('click', function (e) {
+  e.stopPropagation()
+  e.preventDefault() 
+  prevFunction(); 
+  console.log('click')
+});
 // prev.addEventListener('click', prevFunction);
 
-// resetB.addEventListener('touchstart', function (e) {
-//   e.stopPropagation()
-//   e.preventDefault() 
-//   resetFunction(); 
-// });
-// resetB.addEventListener('click', resetFunction);
+resetB.addEventListener('touchstart', function (e) {
+  e.stopPropagation()
+  e.preventDefault() 
+  resetFunction(); 
+});
+resetB.addEventListener('click', resetFunction);
 
 
 
