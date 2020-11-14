@@ -155,27 +155,35 @@ const prev = document.querySelector('.prev');
 const resetB = document.querySelector('.reset');
 const mainImg = document.querySelector('.img-12-max');
 
-
-next.addEventListener('touchend', function (e) {
-  e.stopPropagation()
-  e.preventDefault() 
-  nextFunction(); 
-});
+if ('ontouchstart' in window) {
+  next.addEventListener('touchstart', nextFunction());
+  prev.addEventListener('touchstart', prevFunction());
+  resetB.addEventListener('touchstart', resetFunction());
+}
 next.addEventListener('click', nextFunction);
-
-prev.addEventListener('touchend', function (e) {
-  e.stopPropagation()
-  e.preventDefault() 
-  prevFunction(); 
-});
 prev.addEventListener('click', prevFunction);
-
-resetB.addEventListener('touchend', function (e) {
-  e.stopPropagation()
-  e.preventDefault() 
-  resetFunction(); 
-});
 resetB.addEventListener('click', resetFunction);
+
+// next.addEventListener('touchstart', function (e) {
+//   e.stopPropagation()
+//   e.preventDefault() 
+//   nextFunction(); 
+// });
+// next.addEventListener('click', nextFunction);
+
+// prev.addEventListener('touchstart', function (e) {
+//   e.stopPropagation()
+//   e.preventDefault() 
+//   prevFunction(); 
+// });
+// prev.addEventListener('click', prevFunction);
+
+// resetB.addEventListener('touchstart', function (e) {
+//   e.stopPropagation()
+//   e.preventDefault() 
+//   resetFunction(); 
+// });
+// resetB.addEventListener('click', resetFunction);
 
 
 
