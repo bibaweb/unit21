@@ -157,18 +157,21 @@ const mainImg = document.querySelector('.img-12-max');
 
 
 next.addEventListener('touchstart', function (e) {
+  e.stopPropagation()
   e.preventDefault() 
   nextFunction(); 
 });
 next.addEventListener('click', nextFunction);
 
 prev.addEventListener('touchstart', function (e) {
+  e.stopPropagation()
   e.preventDefault() 
   prevFunction(); 
 });
 prev.addEventListener('click', prevFunction);
 
 resetB.addEventListener('touchstart', function (e) {
+  e.stopPropagation()
   e.preventDefault() 
   resetFunction(); 
 });
