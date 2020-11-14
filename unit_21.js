@@ -151,18 +151,30 @@ const images = document.querySelectorAll('.img-12-min');
 let count = 0; // переменная, которая указывает на номер активного изображения в images
 
 const next = document.querySelector('.next');
-next.onclick = nextFunction;
-next.addEventListener('touchstart', nextFunction);
-
 const prev = document.querySelector('.prev');
-prev.onclick = prevFunction;
-prev.addEventListener('touchstart', prevFunction);
-
 const resetB = document.querySelector('.reset');
-resetB.onclick = resetFunction;
-resetB.addEventListener('touchstart', resetFunction);
-
 const mainImg = document.querySelector('.img-12-max');
+
+
+next.addEventListener('touchstart', function (e) {
+  e.preventDefault() 
+  nextFunction(); 
+});
+next.addEventListener('click', nextFunction);
+
+prev.addEventListener('touchstart', function (e) {
+  e.preventDefault() 
+  prevFunction(); 
+});
+prev.addEventListener('click', prevFunction);
+
+resetB.addEventListener('touchstart', function (e) {
+  e.preventDefault() 
+  resetFunction(); 
+});
+resetB.addEventListener('click', resetFunction);
+
+
 
 function nextFunction() {
   images[count].classList.remove('active-img');
